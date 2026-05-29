@@ -4,32 +4,32 @@
 WATER_PER_KG = 30
 
 
-def is_blank(input: str) -> bool:
+def is_blank(user_input: str) -> bool:
     """
     Проверяет, пустая переданная строка или нет.
 
-    :param input: Проверяемая строка
+    :param user_input: Проверяемая строка
     :return: True, если строка пустая, иначе False
     """
-    return input.strip() == ""
+    return user_input.strip() == ""
 
 
-def is_float(input: str) -> bool:
+def is_float(user_input: str) -> bool:
     """
     Проверяет, преобразуется ли проверяемая
     строка в float
 
-    :param input: Проверяемая строка
+    :param user_input: Проверяемая строка
     :return: True, если строка float, иначе False
     """
     try:
-        float(input)
+        float(user_input)
         return True
     except ValueError:
         return False
 
 
-def is_int(input: str) -> bool:
+def is_int(user_input: str) -> bool:
     """
     Проверяет, преобразуется ли проверяемая
     строка в int
@@ -39,7 +39,7 @@ def is_int(input: str) -> bool:
     в int, иначе False
     """
     try:
-        int(input)
+        int(user_input)
         return True
     except ValueError:
         return False
@@ -136,8 +136,7 @@ def calculate_water_needed(weight: float) -> float:
     :param weight: Вес человека в килограммах
     :return: Объем воды в литрах, округленный до сотых
     """
-    water_l = weight * WATER_PER_KG / 1000
-    return water_l
+    return weight * WATER_PER_KG / 1000
 
 
 def fit_life() -> None:
